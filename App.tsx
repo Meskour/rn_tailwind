@@ -11,7 +11,13 @@ export default function App() {
   const MyComponent = () => {
     const tailwind = useTailwind();
 
-    return <Text style={tailwind('text-blue-600')}>Hello world!</Text>;
+    return (
+      <SafeAreaView>
+        <View style={tailwind('items-center')}>
+          <Text style={tailwind('text-blue-600')}>Hello world!</Text>
+        </View>
+      </SafeAreaView>
+    );
   };
 
   return (<TailwindProvider utilities={utilities}>
